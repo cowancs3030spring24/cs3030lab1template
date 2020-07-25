@@ -1,3 +1,5 @@
+@announce-output
+
 Feature: Script must be present and be executable
 	Scenario: hello must be found
 		When I run `getfile` 

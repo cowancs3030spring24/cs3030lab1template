@@ -1,3 +1,5 @@
+@announce-output
+
 Feature: Program should say Hello World!
 	Scenario: hello should print "Hello World!"
 		When I run `hello`

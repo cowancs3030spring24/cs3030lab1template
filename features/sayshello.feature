@@ -1,4 +1,4 @@
-@announce-output
+#@announce-output
 
 Feature: Program should say Hello World!
 	Scenario: hello should print "Hello World!"

@@ -1,5 +1,3 @@
-##@announce-output
-
 Feature: Script must be present and be executable
 	Scenario: hello must be found
 		When I run `getfile` 
@@ -8,4 +6,5 @@ Feature: Script must be present and be executable
 
 	Scenario: hello must be executable
 		When I run `hello` 
+        And OUTPUT is printed
 		Then 25 points are awarded

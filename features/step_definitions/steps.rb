@@ -5,15 +5,15 @@ Given /^OUTPUT is printed/ do
         log stdoutOutput
         log "<<<STDOUT"
     else
-        puts "STDOUT is EMPTY"
+        log "STDOUT is EMPTY"
     end
     stderrOutput = all_commands.map { |c| c.stderr }.join("\n").strip
     if stderrOutput != ""
-        puts "STDERR>>>"
-        puts stderrOutput
-        puts "<<<STDERR"
+        log "STDERR>>>"
+        log stderrOutput
+        log "<<<STDERR"
     else
-        puts "STDERR is EMPTY"
+        log "STDERR is EMPTY"
     end
 end
 
@@ -38,7 +38,7 @@ Given /^timeout is increased by (.*) seconds$/ do |seconds|
 	if @aruba_timeout_seconds  
 		@aruba_timeout_seconds += seconds.to_i
 	else
-		puts "aruba_timeout_seconds is NIL!"
+		log "aruba_timeout_seconds is NIL!"
 	end
 end
 

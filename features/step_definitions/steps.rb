@@ -1,9 +1,9 @@
 Given /^OUTPUT is printed/ do
     stdoutOutput = all_commands.map { |c| c.stdout }.join("\n").strip
     if stdoutOutput != ""
-        puts "STDOUT>>>"
-        puts stdoutOutput
-        puts "<<<STDOUT"
+        log "STDOUT>>>"
+        log stdoutOutput
+        log "<<<STDOUT"
     else
         puts "STDOUT is EMPTY"
     end
@@ -18,15 +18,15 @@ Given /^OUTPUT is printed/ do
 end
 
 Given /^the output should contain PWD$/ do 
-	#puts ENV['PWD']
-	#puts ENV['HOME']
-	#puts @dirs.join("/")
+	#log ENV['PWD']
+	#log ENV['HOME']
+	#log @dirs.join("/")
 	#step "the output should match /" + Regexp.escape(ENV['PWD']) + "/"
 	step "the output should contain \"" +  ENV['PWD'] + "/" + @dirs.join("/") + "\""
 end
 
 Given /^(.*) points are awarded/ do |points|
-	#puts "#{points} points are now awarded!!!"
+	#log "#{points} points are now awarded!!!"
 	$total_points += points.to_i
 end
 
@@ -46,7 +46,7 @@ Given /^timeout is decreased by (.*) seconds$/ do |seconds|
 	if @aruba_timeout_seconds
 		@aruba_timeout_seconds -= seconds.to_i
 	else
-		puts "aruba_timeout_seconds is NIL!"
+		log "aruba_timeout_seconds is NIL!"
 	end
 end
 
